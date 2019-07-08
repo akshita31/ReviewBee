@@ -2,13 +2,13 @@ namespace ReviewBee
 {
     public class PullRequestFile
     {
-        public PullRequestFile(string fileName, string patchContent)
+        public PullRequestFile(string name, string patchContent)
         {
-            FileName = fileName;
+            Name = name;
             PatchContent = patchContent;
         }
 
-        public string FileName { get; }
+        public string Name { get; }
         public string PatchContent { get; }
     }
 }

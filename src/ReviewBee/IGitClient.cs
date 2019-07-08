@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReviewBee
 {
     public interface IGitClient
     {
-        IEnumerable<PullRequestFile> GetPullRequestFiles(string owner, string name, int pullRequestNumber);
+        Task<IEnumerable<PullRequestFile>> GetPullRequestFiles(string owner, string name, int pullRequestNumber);
     }
 }

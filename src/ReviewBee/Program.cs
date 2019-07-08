@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace ReviewBee
 {
@@ -6,7 +7,25 @@ namespace ReviewBee
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string owner = "omnisharp";
+            string name = "omnisharp-vscode";
+            int prNumber = 3089;
+            var githubClient = new GithubClient();
+            var visualiser = new PullRequestVisualiser(githubClient, new RealConsole());
+            Task.WaitAll(visualiser.Visualise(owner, name, prNumber));
+        }
+    }
+
+    public class RealConsole : IConsole
+    {
+        public int Read()
+        {
+           return Console.Read();
+        }
+
+        public void Write(string text)
+        {
+            Console.Write(text);
         }
     }
 }
