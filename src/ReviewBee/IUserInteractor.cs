@@ -26,10 +26,10 @@ namespace ReviewBee
             _console.Write(text.ToString());
             _console.Write("Enter your choice");
             int choice=1;
-            // do
-            // {
-            //     choice = _console.Read();
-            // } while (!(choice > 0 && choice <= files.Count()));
+            do
+            {
+                choice = _console.Read();
+            } while (!(choice > 0 && choice <= files.Count()));
 
             return files.ElementAt(choice-1);
         }

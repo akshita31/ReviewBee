@@ -20,7 +20,7 @@ namespace ReviewBee
     {
         public int Read()
         {
-           return Console.Read();
+           return Convert.ToInt32(Console.ReadLine());
         }
 
         public void Write(string text)
