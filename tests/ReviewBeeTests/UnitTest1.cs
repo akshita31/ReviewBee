@@ -19,7 +19,7 @@ namespace ReviewBeeTests
             var gitClient = new FakeGitClient(){
                 ("rootFile","someContent")
             };
-            var console = new FakeConsole();
+            var console = new FakeConsole(1);
 
             var visualiser = new PullRequestVisualiser(gitClient, console);
             var obtainedGraph = await visualiser.Visualise(owner, repoName, prNumber);
@@ -29,9 +29,16 @@ namespace ReviewBeeTests
 
     public class FakeConsole : IConsole
     {
+        private int _readOutput;
+
+        public FakeConsole(int readOutput)
+        {
+            _readOutput =readOutput;
+        }
+
         public int Read()
         {
-            return 1;
+            return _readOutput;
         }
 
         public void Write(string text)

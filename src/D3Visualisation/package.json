@@ -1,0 +1,19 @@
+{
+  "name": "d3visualisation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.9.7",
+    "d3-selection": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^5.7.2"
+  }
+}
