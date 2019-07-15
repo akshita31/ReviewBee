@@ -5,7 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "compile": "rollup -c -w",
-    "serve": "live-server src --watch=src/**/*.html, dist/bundle.js,src/**/*.css"
+    "serve": "http-serve"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,6 @@
   "devDependencies": {
     "@types/d3": "^5.7.2",
     "http-serve": "^1.0.1",
-    "live-server": "^1.2.1",
     "rollup": "^1.16.7",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.22.0",
