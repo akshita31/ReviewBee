@@ -1,33 +1,14 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="en">
 <head>
-<style>
-
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
-  position: relative;
-}
-
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3 with TypeScript</title>
 </head>
 <body>
-
+    <script src="/dist/bundle.js"></script>
+    <script>
+    </script>
 </body>
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
-
-  var names = ['Frank', 'Tom', 'Peter', 'Mary'];
-
-	var ul = d3.select('body').append('ul');
-
-	ul.selectAll('li')
-	.data(names)
-	.enter()
-	.append('li')
-	.html(String);
-
-</script>
+</html>

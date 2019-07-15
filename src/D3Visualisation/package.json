@@ -2,9 +2,9 @@
   "name": "D3Visualisation",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "compile":"tsc",
+    "compile": "tsc && rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +16,8 @@
   "devDependencies": {
     "@types/d3": "^5.7.2",
     "http-serve": "^1.0.1",
+    "rollup": "^1.16.7",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "typescript": "^3.5.3"
   }
 }
