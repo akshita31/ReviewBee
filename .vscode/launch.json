@@ -11,7 +11,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/ReviewBee/bin/Debug/netcoreapp2.2/ReviewBee.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/ReviewBee",
+            //"cwd": "${workspaceFolder}/src/ReviewBee",
             "console": "internalConsole",
             "stopAtEntry": false
         },

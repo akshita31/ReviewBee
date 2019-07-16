@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Octokit;
 
 namespace ReviewBee
 {
@@ -11,6 +12,10 @@ namespace ReviewBee
             string name = "omnisharp-vscode";
             int prNumber = 3089;
             var githubClient = new GithubClient();
+
+            // Download a sample repo.
+            Task.WaitAll(githubClient.DownloadGithubRepo(owner, name, ".", "master"));
+
             var visualiser = new PullRequestVisualiser(githubClient, new RealConsole());
             Task.WaitAll(visualiser.Visualise(owner, name, prNumber));
         }
