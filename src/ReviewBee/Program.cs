@@ -11,7 +11,7 @@ namespace ReviewBee
             string owner = "omnisharp";
             string name = "omnisharp-vscode";
             int prNumber = 3089;
-            var githubClient = new GithubClient();
+            var githubClient = new OctokitGitClient();
 
             // Download a sample repo.
             Task.WaitAll(githubClient.DownloadGithubRepo(owner, name, ".", "master"));
