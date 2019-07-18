@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.1.0" />
+    <PackageReference Include="buildalyzer" Version="2.3.0" />
+    <PackageReference Include="buildalyzer.workspaces" Version="2.3.0" />
   </ItemGroup>
-
 </Project>
