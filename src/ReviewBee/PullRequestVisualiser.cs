@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReviewBee
@@ -22,42 +21,5 @@ namespace ReviewBee
             var graph = new PullRequestGraph(new PullRequestFileNode(headFile));
             return graph;
         }
-    }
-
-    public class PullRequestGraph
-    {
-        public PullRequestGraph(PullRequestFileNode rootNode)
-        {
-            Root = rootNode;
-        }
-
-        public PullRequestFileNode Root { get; }
-    }
-
-    public class PullRequestFileNode
-    {
-        public PullRequestFileNode(PullRequestFile file)
-        {
-            _file = file;
-        }
-
-        public string Name
-        {
-            get
-            {
-                return _file.Name;
-            }
-        }
-
-        public string PatchContent
-        {
-            get
-            {
-                return _file.PatchContent;
-            }
-        }
-
-        public List<PullRequestFileNode> Children { get; }
-        private PullRequestFile _file;
     }
 }
