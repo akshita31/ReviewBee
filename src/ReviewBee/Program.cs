@@ -10,10 +10,10 @@ namespace ReviewBee
     {
         static void Main(string[] args)
         {
-            var githubClient = new OctokitGitClient();
+            var githubClient = new OctokitGitClient(Default.ReviewBeeDirectory);
 
             // Download a sample repo.
-            Task.WaitAll(githubClient.DownloadGithubRepo(Default.RepoOwner, Default.RepoName, ".", "master", Default.ReviewBeeDirectory));
+            Task.WaitAll(githubClient.DownloadGithubRepo(Default.RepoOwner, Default.RepoName, ".", "master"));
 
             var visualiser = new PullRequestVisualiser(githubClient, new RealConsole());
             Task.WaitAll(visualiser.Visualise(Default.RepoOwner, Default.RepoName, Default.PrNumber));

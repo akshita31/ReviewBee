@@ -11,10 +11,12 @@ namespace ReviewBee
 {
     public class OctokitGitClient : IGitClient
     {
+        private DirectoryInfo _defaultBaseDirectory;
         private GitHubClient _client;
 
-        public OctokitGitClient()
+        public OctokitGitClient(DirectoryInfo defaultBaseDirectory)
         {
+            _defaultBaseDirectory = defaultBaseDirectory;
             _client = new GitHubClient(new ProductHeaderValue("my-cool-app"));
         }
 
@@ -25,14 +27,14 @@ namespace ReviewBee
             return prFiles.Select(file => new PullRequestFile(file.FileName, file.Patch));
         }
 
-        public async Task DownloadGithubRepo(string owner, string name, string path, string commitId, DirectoryInfo downloadDirectory)
+        public async Task DownloadGithubRepo(string owner, string name, string path, string commitId)
         {
             var id = (await _client.Repository.Get(owner, name)).Id;
             IReadOnlyList<RepositoryContent> repoContent = await _client.Repository.Content.GetAllContentsByRef(id, path, commitId);
 
             var repoArchive = await _client.Repository.Content.GetArchive(id, ArchiveFormat.Zipball, commitId);
 
-            var repoDirectory = Path.Combine(downloadDirectory.FullName, $"{owner}-{name}-{commitId}");
+            var repoDirectory = Path.Combine(_defaultBaseDirectory.FullName, $"{owner}-{name}-{commitId}");
             
             StoreByteArrayToZip(repoArchive, Directory.CreateDirectory(repoDirectory));
             Console.WriteLine("hello");
