@@ -23,7 +23,7 @@ namespace RoslynAPI
                 {
                     // GetWorkspace returns Microsoft.CodeAnalysis.AdhocWorkspace which can be used with Roslyn
                     var workspace = prj.GetWorkspace();
-                    workspace.CurrentSolution.GetProjectDependencyGraph();
+                    workspace.CurrentSolution.Projects.First().Documents;
                     var sln = workspace.CurrentSolution;
 
                     //await AnalyzeProject(sln.Projects.First());
