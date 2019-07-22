@@ -1,4 +1,4 @@
-namespace ReviewBee
+namespace GitInteractions
 {
     public class PullRequestFile
     {

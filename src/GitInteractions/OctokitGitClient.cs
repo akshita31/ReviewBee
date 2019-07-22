@@ -5,7 +5,6 @@ using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
 using Octokit;
-using System.Web.Mvc;
 
 namespace GitInteractions
 {
