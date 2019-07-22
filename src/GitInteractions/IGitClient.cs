@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ReviewBee
+namespace GitInteractions
 {
     public interface IGitClient
     {

@@ -10,4 +10,8 @@
     <PackageReference Include="octokit" Version="0.32.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GitInteractions\GitInteractions.csproj" />
+  </ItemGroup>
+
 </Project>

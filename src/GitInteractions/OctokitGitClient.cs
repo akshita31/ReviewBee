@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Octokit;
 using System.Web.Mvc;
 
-namespace ReviewBee
+namespace GitInteractions
 {
     public class OctokitGitClient : IGitClient
     {
